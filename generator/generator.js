@@ -1,6 +1,7 @@
 const _ = require("lodash");
 
 const typesClass = require("../types/types");
+const schemasClass = require("../schemas.js")
 
 const nameTypes = require("../types/collection/nameTypes");
 const fixedTypes = require("../types/collection/fixedTypes");
@@ -15,7 +16,9 @@ const imageTypes = require("../types/collection/imageTypes");
 const idTypes = require("../types/collection/idTypes");
 const randomTypes = require("../types/collection/randomTypes");
 
+
 const types = new typesClass();
+const schemas = new schemasClass();
 
 types.addTypes(nameTypes);
 types.addTypes(fixedTypes);
@@ -107,4 +110,4 @@ const generate = (schema, amount = 10) => {
   return mockList;
 };
 
-module.exports = { generate, types };
+module.exports = { generate, types, schemas };
